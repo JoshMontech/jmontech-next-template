@@ -5,4 +5,4 @@ a nextjs template I created that contains the essentials for any project includi
 - prettier config
 - vscode config
 - tailwindcss
-- tailwind themeing (not just dark mode toggle)
+- multi-themeing for tailwind
