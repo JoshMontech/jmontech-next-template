@@ -48,23 +48,25 @@ export default function Home() {
     }, [timer, play])
 
     return (
-        <main className="align-center flex w-full flex-1 flex-col justify-between transition-colors">
-            <div className="mt-12 flex flex-col justify-start">
+        <main className="align-center flex w-full flex-1 flex-col items-center justify-between transition-colors">
+            <div className="mt-12 flex w-full max-w-[600px] flex-col justify-center">
                 <div className="flex flex-col items-center">
-                    <div className="text-9xl">{timer}</div>
+                    <div className="text-[180px]">{timer}</div>
                     <progress value={timer / 60} />
                 </div>
-                <div className="mt-8 grid grid-cols-3 gap-4 bg-gray-100 p-4">
+                <div className="mt-8 grid grid-cols-3 gap-4 p-4">
                     <button
                         onClick={() => startTimer()}
-                        className="flex items-center justify-center rounded border border-black py-4"
+                        className={`flex items-center justify-center rounded border border-black py-4 ${
+                            interval.active ? "bg-green-200" : ""
+                        }`}
                     >
                         <FaPlay style={{ fontSize: "3rem" }} />
                     </button>
                     <button
                         onClick={() => pauseTimer()}
                         className={`flex items-center justify-center rounded border border-black py-4 ${
-                            !interval.active ? "bg-gray-200" : ""
+                            !interval.active ? "bg-red-200" : ""
                         }`}
                     >
                         <FaPause style={{ fontSize: "3rem" }} />
